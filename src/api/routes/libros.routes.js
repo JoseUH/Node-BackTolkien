@@ -14,7 +14,7 @@ const {
 
 router.get("/", getAllLibros);
 router.get("/:id", getLibrosByID);
-router.post("/", upload.single("portada"), createLibros);
+router.post("/",[isAuth], upload.single("portada"), createLibros);
 router.delete('/:id',[isAuth], upload.single("portada"), deleteLibros);
 router.patch('/:id',[isAuth], upload.single("portada"), patchLibro)
 
