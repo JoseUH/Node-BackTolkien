@@ -16,7 +16,7 @@ const {
 router.get("/", getAllPeliculas);
 router.get("/:id",  getPeliculasByID);
 router.post("/",[isAuth],upload.single("caratula"), createPeliculas);
-router.delete('/:id',upload.single("caratula"), deletePeliculas);
+router.delete('/:id',[isAuth],upload.single("caratula"), deletePeliculas);
 router.patch('/:id',upload.single("caratula"), patchPelicula)
 
 module.exports = router;
